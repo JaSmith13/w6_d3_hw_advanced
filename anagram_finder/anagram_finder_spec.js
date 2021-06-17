@@ -7,7 +7,7 @@ describe('AnagramFinder', function () {
     assert.deepStrictEqual(anagramFinder.findAnagrams(['cat', 'dog']), ['cat']);
   });
 
-  xit('should be able to detect a non-anagram', function () {
+  it('should be able to detect a non-anagram', function () {
     const anagramFinder = new AnagramFinder('potato');
     assert.deepStrictEqual(anagramFinder.findAnagrams(['tomato']), []);
   })

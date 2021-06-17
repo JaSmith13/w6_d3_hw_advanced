@@ -4,7 +4,8 @@ const AnagramFinder = function (word) {
 
 AnagramFinder.prototype.findAnagrams = function (otherWords) {
     foundAnagrams = []
-    otherWords.forEach(word => {
+    const sameLengthWords = checkLengthsOtherWords(this.word, otherWords)
+    sameLengthWords.forEach(word => {
         if(checkLettersInWord(word, this.word))
         foundAnagrams.push(word)
     }) 
@@ -21,6 +22,12 @@ function checkLettersInWord(word, arrayOfLetters){
     if (counter === word.length){
         return true
     }
+}
+
+function checkLengthsOtherWords (checkWord, arrayOfWords) {
+    arrayOfWords.filter(word =>{
+        return word.length === checkWord.length
+    })
 }
 
 module.exports = AnagramFinder;
